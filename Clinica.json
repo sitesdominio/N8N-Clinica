@@ -1,0 +1,108 @@
+{
+  "name": "Clinica",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.groq.com/openai/v1/audio/transcriptions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=bearer {{ GROQ_API_KEY }}"
+            }
+          ]
+        }
+      },
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "credentials": {
+          "googlePalmApi": {
+            "id": "GOOGLE_API_ID",
+            "name": "Google Gemini API"
+          }
+        }
+      },
+      "name": "Analyze an image"
+    },
+    {
+      "parameters": {
+        "credentials": {
+          "googleApi": {
+            "id": "GOOGLE_SERVICE_ACCOUNT_ID",
+            "name": "Google Service Account"
+          }
+        }
+      },
+      "name": "Google Sheets"
+    },
+    {
+      "parameters": {
+        "credentials": {
+          "groqApi": {
+            "id": "GROQ_ACCOUNT_ID",
+            "name": "Groq Account"
+          }
+        }
+      },
+      "name": "Groq Model"
+    },
+    {
+      "parameters": {
+        "credentials": {
+          "redis": {
+            "id": "REDIS_ID",
+            "name": "Redis"
+          }
+        }
+      },
+      "name": "Redis Memory"
+    },
+    {
+      "parameters": {
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "{{ UAZAPI_TOKEN }}"
+            }
+          ]
+        }
+      },
+      "name": "Uazapi Send Message"
+    },
+    {
+      "parameters": {
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "{{ UAZAPI_TOKEN }}"
+            }
+          ]
+        }
+      },
+      "name": "Uazapi View Message"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "groqkey",
+              "value": "{{ GROQ_API_KEY }}"
+            },
+            {
+              "name": "token",
+              "value": "{{ UAZAPI_TOKEN }}"
+            }
+          ]
+        }
+      },
+      "name": "Dados"
+    }
+  ]
+}
